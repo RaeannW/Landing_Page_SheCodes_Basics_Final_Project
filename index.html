@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Dream Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color: #232321;
+        }
+
+        .content_container {
+            background: radial-gradient(circle at 5.3% 17.2%, rgb(255, 208, 255) 0%, rgb(255, 237, 216) 90%);
+            width: 600px;
+            margin: 0 auto;
+            display: block;
+            padding: 20px 0px 20px 0px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 3px #cccccc;
+        }
+
+        .logo {
+            width: 180px;
+            margin: 0 auto;
+            padding: 10px 0px 10px 0px;
+            display: block;
+            justify-content: center;
+        }
+
+        .imageContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0px 40px 0px;
+        }
+
+        .imageContainer::before {
+            content: "";
+            background-image: url(Images/donutGallery.jpeg);
+            opacity: 40%;
+            background-size: cover;
+            position: absolute;
+            width: 600px;
+            padding: 80px 0px 80px 0px;
+        }
+
+        h1 {
+            position: relative;
+            color: #232321;
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+            display: block;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        p {
+            padding: 0% 5% 0% 5%;
+            font-family: 'Poppins', sans-serif;
+            line-height: normal;
+        }
+
+        .centerText {
+            text-align: center;
+        }
+
+        .donut {
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+            justify-content: center;
+        }
+
+        #fairTrade {
+            font-weight: bold;
+            color: #f773a1;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        button {
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin: 0 auto;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px 30px 15px 30px;
+            background-color: #f773a1;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 3px 3px 3px #cccccc;
+            transition: all 200ms ease-in-out;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #f773a1;
+            cursor: pointer;
+        }
+
+        .contact {
+            font-size: small;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content_container">
+        <img class="logo" src="Images/DonutLogo.png" alt="DonutDream Logo">
+        <div class="imageContainer">
+            <h1>Free Donut Samples</h1>
+        </div>
+        <h2>Complete Your Free Sample Order</h2>
+        <p>Welcome to <strong><em>Donut Dream</em></strong>. We are a team of passionate bakers and coffee enthusiasts
+            who love crafting new treats and beverages for all to enjoy. We offer traditional, vegetarian and vegan
+            sweets; and partner with <a href="https://www.fairtradeamerica.org/" target="_blank"><span
+                    id="fairTrade">Fair Trade</span></a>, orgranic coffee suppliers.</p>
+        <img class="donut" src="Images/donut.png" alt="Donuts">
+        <p>As part of our grand opening, we are offering free samples to our clients who are interested in placing
+            catering and bulk orders. <br>Please enter your contact information below to complete your FREE Sample
+            Order.</p>
+        <button>ORDER NOW</button>
+        <br>
+        <p class="centerText"><strong>Someone will be in contact with you after submitting your order.</strong></p>
+        <hr>
+        <span class="contact">© Copyright 2023 Donut Dream Designed by Rae Wiechens</span>
+    </div>
+    <script>
+        function contactInfo() {
+            let name = prompt("Please Enter Your Full Name");
+            let email = prompt("Please Enter Your Email Address");
+            let donutType = prompt("Which of The Following Donut Options Would You Like: Traditional, Vegetarian, or Vegan");
+            let response = `Thank you ${name}. We are preparing your ${donutType} donut order. A follow up email will be sent to ${email}.`;
+            let inStock = "Your Selection is In-Stock!";
+            let outOfStock = "Your Selection is Out of Stock. Please contact us for more info"
+
+            if (donutType == "Traditional" || donutType == "traditional" || donutType == "Vegetarian" || donutType == "vegetarian") {
+                alert(inStock + " " + response);
+            } else if (donutType == "Vegan" || donutType == "vegan"){
+                alert(outOfStock);
+            } else {
+                alert("We Are Unable to Process Your Request");
+            }
+
+        }
+        let contactButton = document.querySelector("button");
+        contactButton.addEventListener("click", contactInfo);
+    </script>
+</body>
+
+</html>
